@@ -1,0 +1,10 @@
+{
+    "runtime.version": "LuaJIT",
+    "workspace.checkThirdParty": false,
+    "diagnostics.disable": [
+        "missing-fields"
+    ],
+    "typeChecking": {
+        "enabled": true
+    }
+}
