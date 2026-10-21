@@ -1,6 +1,8 @@
 --[[
 --ffi binding for libspeak-ng.
 --]]
+--The goal with this module is to make using the libespeak-ng library straight
+--forward in lua.
 
 local m = {}
 
