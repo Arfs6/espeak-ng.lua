@@ -1,6 +1,9 @@
 # Compiled Lua sources
 luac.out
 
+# Built C audio binding
+lua/espeak-ng/audio.so
+
 # luarocks build files
 *.src.rock
 *.zip
