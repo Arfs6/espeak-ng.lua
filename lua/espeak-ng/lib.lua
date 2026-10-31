@@ -4,8 +4,7 @@
 --The goal with this module is to make using the libespeak-ng library straight
 --forward in lua.
 --
--- This module only declares the C ABI and exposes it. Higher-level behavior
--- such as audio routing and lifecycle ordering belongs in mana.lua.
+-- This module only declares the C ABI and exposes it.
 
 local m = {}
 
