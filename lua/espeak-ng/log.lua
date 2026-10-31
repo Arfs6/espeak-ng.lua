@@ -10,6 +10,9 @@
 local log = { _version = "0.1.0" }
 
 log.usecolor = false
+-- Console output is off by default. Set log.useconsole = true after requiring
+-- this module to also print log messages.
+log.useconsole = false
 if vim == nil then
 	log.outfile = 'espeak-ng.log'
 else
@@ -69,14 +72,16 @@ for i, x in ipairs(modes) do
     local info = debug.getinfo(2, "Sl")
     local lineinfo = info.short_src .. ":" .. info.currentline
 
-    -- Output to console
-    print(string.format("%s[%-6s%s]%s %s: %s",
-                        log.usecolor and x.color or "",
-                        nameupper,
-                        os.date("%H:%M:%S"),
-                        log.usecolor and "\27[0m" or "",
-                        lineinfo,
-                        msg))
+    -- Output to console when explicitly enabled.
+    if log.useconsole then
+      print(string.format("%s[%-6s%s]%s %s: %s",
+                          log.usecolor and x.color or "",
+                          nameupper,
+                          os.date("%H:%M:%S"),
+                          log.usecolor and "\27[0m" or "",
+                          lineinfo,
+                          msg))
+    end
 
     -- Output to log file
     if log.outfile then

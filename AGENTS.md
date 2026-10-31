@@ -16,7 +16,7 @@ LuaJIT/Neovim bindings for espeak-ng, with a small C audio layer built on miniau
   `LUA_PATH='./lua/?.lua;;' nvim -l lua/main.lua`
 - `lua/main.lua` is the demo entrypoint; it requires a working audio device.
 - `lib.lua` loads libespeak-ng from a hardcoded Linux path, `/usr/lib/x86_64-linux-gnu/libespeak-ng.so.1`. The system package must be installed.
-- Logging goes to `espeak-ng.log` (or Neovim's log dir), not stdout.
+- Logging always goes to `espeak-ng.log` (or Neovim's log dir). Console output is off by default; set `log.useconsole = true` on the log module to enable it.
 
 ## Boundaries
 
